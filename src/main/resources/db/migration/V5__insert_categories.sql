@@ -1,0 +1,15 @@
+INSERT INTO categories (name) VALUES ('Овощные блюда');
+INSERT INTO categories (name) VALUES ('Закуски');
+INSERT INTO categories (name) VALUES ('Салаты');
+INSERT INTO categories (name) VALUES ('Холодные и теплые супы');
+INSERT INTO categories (name) VALUES ('Макаронные блюда');
+INSERT INTO categories (name) VALUES ('Рыбные блюда');
+INSERT INTO categories (name) VALUES ('Блюда из птицы');
+INSERT INTO categories (name) VALUES ('Блюда без мяса');
+INSERT INTO categories (name) VALUES ('Блюда из дрожжевого теста');
+INSERT INTO categories (name) VALUES ('Мясные блюда');
+INSERT INTO categories (name) VALUES ('Блюда из яиц');
+INSERT INTO categories (name) VALUES ('Холодные десерты');
+INSERT INTO categories (name) VALUES ('Десерты');
+INSERT INTO categories (name) VALUES ('Восточная кухня');
+INSERT INTO categories (name) VALUES ('Вегетарианская кухня');
