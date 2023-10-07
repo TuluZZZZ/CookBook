@@ -1,6 +1,5 @@
 package com.cook.book.cook.models;
 
-import com.cook.book.cook.dtos.IngredientName;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,8 +20,7 @@ public class Ingredient {
     private Long id;
 
     @Column(name = "ingredientName")
-    @Enumerated(EnumType.STRING)
-    private IngredientName ingredientName;
+    private String ingredientName;
 
     @Column(name = "quantity")
     private Integer quantity;

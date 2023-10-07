@@ -35,4 +35,10 @@ public class Dish {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dish")
     private List<Ingredient> ingredients=new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "dish")
+    private List<UserDish> userDishes=new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "dish")
+    private List<Image> images = new ArrayList<>();
 }

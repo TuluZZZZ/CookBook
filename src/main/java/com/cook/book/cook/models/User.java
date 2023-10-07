@@ -40,6 +40,8 @@ public class User implements UserDetails {
 
     @Column(name = "approved")
     private Boolean approved;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private List<UserDish> userDishes=new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -47,6 +49,7 @@ public class User implements UserDetails {
         userRoleList.add(this.userRole);
         return userRoleList;
     }
+
 
     @Override
     public String getUsername() {
