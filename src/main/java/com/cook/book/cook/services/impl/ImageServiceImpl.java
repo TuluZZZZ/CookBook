@@ -4,6 +4,7 @@ import com.cook.book.cook.dtos.DishDto;
 import com.cook.book.cook.models.Dish;
 import com.cook.book.cook.repositories.DishRepository;
 import com.cook.book.cook.repositories.ImageRepository;
+import com.cook.book.cook.services.ImageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

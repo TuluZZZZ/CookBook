@@ -1,4 +1,4 @@
-package com.cook.book.cook.services.impl;
+package com.cook.book.cook.services;
 
 import com.cook.book.cook.dtos.DishDto;
 
