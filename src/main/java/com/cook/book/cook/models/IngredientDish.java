@@ -4,37 +4,27 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "images")
+@Table(name = "ingredient_dish")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Image {
+public class IngredientDish {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    @Column(name = "name")
-    private String name;
 
-    @Column(name = "original_file_name")
-    private String originalFileName;
-
-    @Column(name = "content_type")
-    private String contentType;
-
-    @Column(name = "size")
-    private Long size;
-
-    @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
-    private byte[] bytes;
+    @Column(name = "quantity")
+    private Integer quantity;
 
     @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     private Dish dish;
+
+    @ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    private Ingredient ingredient;
 }

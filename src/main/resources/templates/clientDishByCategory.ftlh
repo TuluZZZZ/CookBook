@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>CategoryOfDish</title>
+    <title>Dish of category</title>
 
     <style>
         table {
@@ -98,27 +98,25 @@
 
 <div align="center">
 
-    <h1>Кулинарные рецепты</h1>
+    <h1>Список блюд</h1>
     <table>
         <thead>
         <tr>
-            <th>Наименование категории</th>
-            <th>Количество рецептов</th>
+            <th>Наименование</th>
+            <th>Рецепт</th>
+            <th>Время приготовления</th>
             <th>Просмотреть</th>
-            <th>Добавить</th>
 
         </tr>
         </thead>
         <tbody>
-        <#list categories as category>
+        <#list dishes as dish>
         <tr>
-            <th>${category.name}</th>
-            <th>${category.countDishes}</th>
+            <th>${dish.name}</th>
+            <th>${dish.description}</th>
+            <th>${dish.cooking_time_minute}</th>
             <th>
-                <a href="/api/v1/admin/${category.id}">Просмотреть</a>
-            </th>
-            <th>
-                <a href="/api/v1/admin/addDish/${category.id}">Добавить</a>
+                <a href="/api/v1/clients/dish/${dish.id}">Просмотреть</a>
             </th>
             </#list>
         </tr>
@@ -127,11 +125,7 @@
 
 </div>
 
-<br>
-<p align="center">
-<h2 align="center"> <a href="/api/v1/admin/createIngredient">Добавить ингредиент</a> </h2>
 
-</p>
 
 </body>
 </html>

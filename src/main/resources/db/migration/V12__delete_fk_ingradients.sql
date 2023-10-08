@@ -1,0 +1,2 @@
+ALTER TABLE ingredients
+DROP CONSTRAINT fk_ingredients_dishes;

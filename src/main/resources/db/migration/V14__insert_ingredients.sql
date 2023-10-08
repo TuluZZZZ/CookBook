@@ -1,0 +1,17 @@
+INSERT INTO measurements(conversion, name) VALUES ( 0, 'гр');
+insert into ingredients (ingredient_name, measurement_id) values ('Баклажан', 4);
+insert into ingredients (ingredient_name, measurement_id) values ('Сыр фета', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Оливковое масло', 2);
+insert into ingredients (ingredient_name, measurement_id) values ('Лимонный сок', 2);
+insert into ingredients (ingredient_name, measurement_id) values ('Чеснок', 4);
+insert into ingredients (ingredient_name, measurement_id) values ('Орегано', 3);
+insert into ingredients (ingredient_name, measurement_id) values ('Перец', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Соль', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Брюсельская капуста', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Ветчина', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Сливки', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Сыр Эдем', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Творог', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Масло сливочноное', 5);
+insert into ingredients (ingredient_name, measurement_id) values ('Мускатный орех', 3);
+insert into ingredients (ingredient_name, measurement_id) values ('Растительное масло', 2);

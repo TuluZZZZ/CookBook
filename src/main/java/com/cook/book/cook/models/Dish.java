@@ -34,7 +34,7 @@ public class Dish {
     private Category category;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dish")
-    private List<Ingredient> ingredients=new ArrayList<>();
+    private List<IngredientDish> ingredientDishes=new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dish")
     private List<UserDish> userDishes=new ArrayList<>();

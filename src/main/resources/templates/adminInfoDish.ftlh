@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>CategoryOfDish</title>
-
+    <title>Dish</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <style>
         table {
             border-collapse: collapse;
@@ -25,22 +25,24 @@
             background-color: #faf0e6;
             margin: auto;
         }
-        img {
-            height: 220px;
-            width: 330px;
-        }
-        button {
-            font-size: 20px;
+        .button {
+            height:75px;
+            width: 210px;
+            border-radius: 10px;
+            background:#DCDCDC;
+            cursor:pointer;
+            font-size:21px;
         }
         li {
             display: inline-block;
             vertical-align: middle;
-            margin-right: 25px;
+            margin-right: 35px;
         }
         header {
             display: flex;
             justify-content: center;
             color: #cfc6b2;
+            font-family: times new roman;
             font-size: 1.1rem;
         }
         a {
@@ -56,6 +58,13 @@
         tbody {
             font-size: 1.2rem;
         }
+        .fig {
+            text-align: center;
+        }
+        img {
+            height: 400px;
+            width: 600px;
+        }
         /*    */
         .dropbtn {
             background-color: #faf0e6;
@@ -65,11 +74,13 @@
             border: none;
             font-family: times new roman;
         }
+
         /* Контейнер <div> - необходим для размещения выпадающего содержимого */
         .dropdown {
             position: relative;
             display: inline-block;
         }
+
         /* Выпадающее содержимое (скрыто по умолчанию) */
         .dropdown-content {
             display: none;
@@ -79,6 +90,7 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
+
         /* Ссылки внутри выпадающего списка */
         .dropdown-content a {
             color: black;
@@ -92,46 +104,70 @@
         /* Показать выпадающее меню при наведении курсора */
         .dropdown:hover .dropdown-content {display: block;}
     </style>
-
 </head>
 <body>
+<header style="margin: 0; padding: 0; ">
+    <div id="menu">
+        <ul>
+
+            <li><a href="/api/v1/admin">Главная</a></li>
+
+
+        </ul>
+    </div>
+</header>
+<br>
+<br>
 
 <div align="center">
+    <#if imageId??>
+        <p class="fig">
+            <img src="/images/${imageId}">
+        </p>
+    </#if>
 
-    <h1>Кулинарные рецепты</h1>
+    <h1 align="center">${dish.name}</h1>
+
+
+
+    <b>Рецепт:</b> ${dish.description} <br>
+    <b>Время приготовления:</b> ${dish.cooking_time_minute} мин.<br>
+    <h2>Ингредиенты</h2>
     <table>
         <thead>
         <tr>
-            <th>Наименование категории</th>
-            <th>Количество рецептов</th>
-            <th>Просмотреть</th>
-            <th>Добавить</th>
+            <th>Наименование</th>
+            <th>Ед. изм.</th>
+            <th>Количество</th>
 
         </tr>
         </thead>
         <tbody>
-        <#list categories as category>
+        <#list ingredients as ingredient>
         <tr>
-            <th>${category.name}</th>
-            <th>${category.countDishes}</th>
-            <th>
-                <a href="/api/v1/admin/${category.id}">Просмотреть</a>
-            </th>
-            <th>
-                <a href="/api/v1/admin/addDish/${category.id}">Добавить</a>
-            </th>
+            <th>${ingredient.ingredientName}</th>
+            <th>${ingredient.measurementName}</th>
+            <th>${ingredient.quantity}</th>
+
             </#list>
         </tr>
         </tbody>
     </table>
 
+
+
+
+
+
+
+    <br>
+
+
+
 </div>
 
-<br>
 <p align="center">
-<h2 align="center"> <a href="/api/v1/admin/createIngredient">Добавить ингредиент</a> </h2>
-
+    <a align="center" href="/api/v1/admin/addIngredient/${dish.id}"><h2><b>Добавить ингредиент</b></h2></a>
 </p>
-
 </body>
 </html>
