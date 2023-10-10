@@ -66,5 +66,3 @@ public class IngredientServiceTest {
         Assert.assertEquals("ing1",ingredientsByDish.get(0).getIngredientName());
     }
 }
-
-

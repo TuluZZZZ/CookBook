@@ -16,8 +16,7 @@ import java.util.List;
 import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -48,7 +47,20 @@ class AdminControllerTest {
                                 .with(csrf())
                 )
                 .andExpect(status().isOk())
-                .andExpect(view().name("adminAddDish"));
-
+                .andExpect(view().name("adminAddDish"))
+                .andExpect(model().attributeExists("categoryId"));
     }
+
+//    @Test
+//    public void createIngredient() throws Exception {
+//        List<Measurement> measurements=new ArrayList<>();
+//        this.mockMvc
+//                .perform(
+//                        post("/api/v1/admin/createIngredient")
+//                                .with(SecurityMockMvcRequestPostProcessors.user("duke").roles("ADMIN"))
+//                                .with(csrf())
+//                )
+//                .andExpect(status().isOk());
+//
+//    }
 }
