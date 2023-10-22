@@ -78,7 +78,6 @@ public class AdminController {
         model.addAttribute("measurements", measurementService.getAllMeasurementDto());
         model.addAttribute("ingredients",ingredientService.getAll());
 
-//        model.addAttribute("measurements", measurementService.getAllMeasurementDto());
         return "adminAddIngredient";
     }
 

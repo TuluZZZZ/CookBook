@@ -9,5 +9,6 @@ import java.util.List;
 public interface DishRepository extends JpaRepository<Dish,Long> {
     Integer countByCategory(Category category);
     List<Dish> findAllByCategory(Category category);
+
 }
 

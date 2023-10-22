@@ -65,12 +65,12 @@
             border: none;
             font-family: times new roman;
         }
-        /* Контейнер <div> - необходим для размещения выпадающего содержимого */
-        .dropdown {
+
+                .dropdown {
             position: relative;
             display: inline-block;
         }
-        /* Выпадающее содержимое (скрыто по умолчанию) */
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -79,17 +79,17 @@
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
-        /* Ссылки внутри выпадающего списка */
+
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-        /* Изменение цвета выпадающих ссылок при наведении курсора */
+
         .dropdown-content a:hover {background-color: #ddd;}
 
-        /* Показать выпадающее меню при наведении курсора */
+
         .dropdown:hover .dropdown-content {display: block;}
     </style>
 
@@ -120,8 +120,8 @@
             <th>
                 <a href="/api/v1/admin/addDish/${category.id}">Добавить</a>
             </th>
-            </#list>
-        </tr>
+                    </tr>
+        </#list>
         </tbody>
     </table>
 
